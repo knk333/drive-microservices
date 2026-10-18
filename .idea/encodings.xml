@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Config-Server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Drive-Service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GATEWAY_API/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Storage-Service/src/main/java" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,7 @@
+package com.drive.Drive_Service.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import java.util.UUID;
+
+public record FolderRequest(@NotBlank String name, UUID parentId) {
+}

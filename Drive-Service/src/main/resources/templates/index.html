@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${title}">Drive</title>
+    <link rel="stylesheet" th:href="@{/css/drive.css}">
+</head>
+<body th:attr="data-api=@{/api}">
+
+<div class="app">
+    <header class="top">
+        <h1 th:text="${title}">Drive</h1>
+        <div class="actions">
+            <button id="newFolderBtn" type="button">New folder</button>
+            <button id="uploadBtn" type="button" class="primary">Upload files</button>
+            <input id="fileInput" type="file" multiple hidden>
+        </div>
+    </header>
+
+    <nav id="crumbs" class="crumbs" aria-label="Folder path"></nav>
+
+    <main id="panel" class="panel" aria-live="polite">
+        <div class="head"><span>Name</span><span>Size</span><span>Added</span><span></span></div>
+        <div id="list"></div>
+    </main>
+</div>
+
+<dialog id="folderDialog">
+    <form id="folderForm" method="dialog">
+        <h2>New folder</h2>
+        <input id="folderName" type="text" maxlength="255" placeholder="Folder name" autocomplete="off" required>
+        <div class="buttons">
+            <button type="button" id="folderCancel">Cancel</button>
+            <button type="submit" class="primary">Create folder</button>
+        </div>
+    </form>
+</dialog>
+
+<dialog id="deleteDialog">
+    <form id="deleteForm" method="dialog">
+        <h2 id="deleteTitle">Delete item?</h2>
+        <p>This permanently removes it from your drive.</p>
+        <div class="buttons">
+            <button type="button" id="deleteCancel">Cancel</button>
+            <button type="submit" class="danger-solid" value="delete">Delete</button>
+        </div>
+    </form>
+</dialog>
+
+<div id="toast" class="toast" role="status" hidden></div>
+
+<script th:src="@{/js/drive.js}"></script>
+</body>
+</html>
